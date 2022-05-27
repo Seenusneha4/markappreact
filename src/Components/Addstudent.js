@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { useState } from 'react'
 import Header from './Header'
 
@@ -8,6 +9,17 @@ const Addstudent = () => {
     const subdata=()=>{
         const data={"name":name,"admno":admno,"cgpa":cgpa}
         console.log(data)
+        axios.post("http://localhost:4500/api/markapp",data).then((response)=>{
+            console.log(response.data)
+            if(response.data.status=="success")
+            {
+                alert("successfully inserted")
+            }
+            else
+            {
+               alert("failed")
+            }
+        })
     }
   return (
     <div>

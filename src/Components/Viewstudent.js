@@ -1,13 +1,13 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useState } from 'react'
 import Header from './Header'
 
 const Viewstudent = () => {
-    var studentlist=[{"name":"seena","admno":"mzc20","cgpa":"7.46"},
-                   {"name":"sneha","admno":"mzc21","cgpa":"8.48"},
-                   {"name":"sreya","admno":"mzc22","cgpa":"8.46"},
-                   {"name":"sayan","admno":"mzc23","cgpa":"9.46"},
-                   {"name":"reny","admno":"mzc24","cgpa":"6.49"},
-]
+    var[studentlist,setstudentlist]=useState([])
+    axios.get("http://localhost:4500/api/viewall").then((response)=>{
+        console.log(response.data)
+        setstudentlist(response.data.data)
+    })
   return (
     <div>
         <Header/>
@@ -16,7 +16,7 @@ const Viewstudent = () => {
         <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
             <div className="row g-3">
             <table class="table table-info">
-  <thead>
+  <thead className="table-primary">
     <tr>
       
       <th scope="col">NAME</th>

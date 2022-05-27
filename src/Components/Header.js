@@ -8,7 +8,7 @@ const Header = () => {
     <div classNameName="row">
         <div classNameName="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
             <div classNameName="row">
-            <nav className="navbar navbar-expand-lg navbar-dark bg-success">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-info">
   <div className="container-fluid">
     <Link to="/" className="navbar-brand" >Student App</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
